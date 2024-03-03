@@ -1,1 +1,1 @@
-# Modern-JavaScript-Deep-Dive2024-
+# typescript-basic
