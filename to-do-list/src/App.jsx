@@ -42,14 +42,14 @@ function App() {
       type:"UPDATE",
       targetId : targetId
     })
-  });
+  }, []);
 
   const onDelete = useCallback ((targetId) => {
     dispatch({
       type:"DELETE",
       targetId : targetId,
     })
-  });
+  }, []);
 
   return (
     <div className='App'>
