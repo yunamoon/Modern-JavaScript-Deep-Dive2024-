@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import './List.css';
 import Item from './item/Item';
 
@@ -20,9 +20,27 @@ const List = ({items, onUpdate , onDelete}) => {
 
  const filteredItems = getFilter();
 
+ const {total, done, notDone} = 
+  useMemo(()=> {
+    console.log("ㅇㅋ");
+    const total = items.length;
+    const done = items.filter((item)=> item.isDone).length;
+    const notDone = total - done;
+    return {
+      total,
+      done,
+      notDone
+    }
+  }, [items]);
+
   return (
     <div className='List'>
       <h4>To do List ✅</h4>
+      <div>
+        <div>total : {total}</div>
+        <div>done : {done}</div>
+        <div>notDone : {notDone}</div>
+      </div>
       <input 
       value={search}
       onChange={onChangeSearch}

@@ -1,4 +1,4 @@
-import { useRef, useReducer} from 'react';
+import { useRef, useReducer, useCallback} from 'react';
 import './App.css'
 import Editor from './components/editor/Editor'
 import Header from './components/header/Header'
@@ -25,7 +25,7 @@ function App() {
   const idRef = useRef(1);
 
 
-  const onCreate = (content) => {
+  const onCreate =  (content) => {
     dispatch({
       type : "CREATE",
       data : {
@@ -37,19 +37,19 @@ function App() {
     })
   };
 
-  const onUpdate = (targetId) => {
+  const onUpdate = useCallback ((targetId) => {
     dispatch({
       type:"UPDATE",
       targetId : targetId
     })
-  };
+  });
 
-  const onDelete = (targetId) => {
+  const onDelete = useCallback ((targetId) => {
     dispatch({
       type:"DELETE",
       targetId : targetId,
     })
-  }
+  });
 
   return (
     <div className='App'>

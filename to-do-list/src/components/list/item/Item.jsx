@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import './Item.css';
 
 const Item = ({ id, isDone, content, date, onUpdate, onDelete}) => {
@@ -22,4 +23,4 @@ const Item = ({ id, isDone, content, date, onUpdate, onDelete}) => {
   )
 }
 
-export default Item
+export default memo(Item);
