@@ -1,34 +1,54 @@
-import { useState, useRef} from 'react';
+import { useRef, useReducer} from 'react';
 import './App.css'
 import Editor from './components/editor/Editor'
 import Header from './components/header/Header'
 import List from './components/list/List'
 
+function reducer(state, action){
+  switch(action.type) {
+    case 'CREATE':
+      return [action.data, ...state];
+    case 'UPDATE':
+      return state.map((item)=> item.id === action.targetId? {...item, isDone:!item.isDone} : item);
+    case 'DELETE':
+      return state.filter((item)=> item.id !== action.targetId);
+    default:
+      return state;
+    }
+}
+
 function App() {
 
-  const [items, setItems] = useState([]);
+  // const [items, setItems] = useState([]);
+  const [items , dispatch] = useReducer(reducer,[]);
+
   const idRef = useRef(1);
 
-  const onCreate = (content) => {
-    const newItem = {
-      id : idRef.current++,
-      isDone : false,
-      content : content,
-      date : new Date().getTime(),
-    }
 
-    setItems([newItem , ...items])
+  const onCreate = (content) => {
+    dispatch({
+      type : "CREATE",
+      data : {
+        id : idRef.current++,
+        isDone : false,
+        content : content,
+        date : new Date().getTime(),
+      },
+    })
   };
 
   const onUpdate = (targetId) => {
-    setItems(items.map(item=> 
-      item.id === targetId? 
-      {...item, isDone: !item.isDone} 
-      : item));
+    dispatch({
+      type:"UPDATE",
+      targetId : targetId
+    })
   };
 
   const onDelete = (targetId) => {
-    setItems(items.filter((item)=> item.id !==targetId))
+    dispatch({
+      type:"DELETE",
+      targetId : targetId,
+    })
   }
 
   return (
