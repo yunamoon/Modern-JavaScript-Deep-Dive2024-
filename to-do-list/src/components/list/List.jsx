@@ -1,9 +1,10 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useContext } from 'react';
 import './List.css';
 import Item from './item/Item';
+import { ItemsStateContext } from '../../App';
 
-const List = ({items, onUpdate , onDelete}) => {
-
+const List = () => {
+  const items = useContext( ItemsStateContext);
   const [search , setSearch] = useState("");
 
   const onChangeSearch = (e) => {
@@ -22,7 +23,6 @@ const List = ({items, onUpdate , onDelete}) => {
 
  const {total, done, notDone} = 
   useMemo(()=> {
-    console.log("ㅇㅋ");
     const total = items.length;
     const done = items.filter((item)=> item.isDone).length;
     const notDone = total - done;
@@ -47,7 +47,7 @@ const List = ({items, onUpdate , onDelete}) => {
       placeholder='검색어를 입력하세요.'/>
       <div className='todo_wrap'>
         {filteredItems.map((item)=> {
-          return <Item key={item.id} {...item}  onUpdate={onUpdate} onDelete={onDelete}/>
+          return <Item key={item.id} {...item}/>
         })}
       </div>
     </div>

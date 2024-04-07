@@ -1,4 +1,4 @@
-import { useRef, useReducer, useCallback} from 'react';
+import { useRef, useReducer, useCallback, createContext, useMemo} from 'react';
 import './App.css'
 import Editor from './components/editor/Editor'
 import Header from './components/header/Header'
@@ -16,6 +16,9 @@ function reducer(state, action){
       return state;
     }
 }
+
+export const ItemsStateContext = createContext();
+export const ItemsDispatchContext = createContext();
 
 function App() {
 
@@ -51,11 +54,20 @@ function App() {
     })
   }, []);
 
+  const memoDispatch = useMemo(()=> {
+    return {onCreate,onUpdate,onDelete};
+  }, []);
+
   return (
     <div className='App'>
     <Header/>
-    <Editor onCreate={onCreate}/>
-    <List items={items} onUpdate={onUpdate} onDelete={onDelete}/>
+    <ItemsStateContext.Provider value={items}>
+    <ItemsDispatchContext.Provider value={memoDispatch}>
+    <Editor/>
+    <List/>
+    </ItemsDispatchContext.Provider>
+    </ItemsStateContext.Provider>
+
     </div>
   )
 }
