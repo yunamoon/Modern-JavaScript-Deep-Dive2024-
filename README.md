@@ -23,6 +23,8 @@
 * weather widget<br/>
 <img src="https://github.com/yunamoon/react-widget/assets/78346017/2667a9ab-6a4b-4aad-8f69-c2803a34e5e9" width="400px">
 <br/>
+<br/>
+
 What did I do:
 * to do list 
 * 현재 위치 기반 날씨 정보 제공 위젯
