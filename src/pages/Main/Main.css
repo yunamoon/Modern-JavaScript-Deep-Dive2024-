@@ -1,0 +1,28 @@
+.Main {
+    color: 272727;
+}
+
+.Main .total_goal {
+    background-color: #89ccc5;
+    padding: 30px 20px;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.total_goal .title {
+    font-size: 24px;
+    font-weight:bold;
+}
+
+.total_goal .comment{
+    font-size: 16px;
+    font-weight: right;
+}
+
+.total_goal .check p{
+    margin-bottom: 5px;
+    font-weight: 600;
+}
