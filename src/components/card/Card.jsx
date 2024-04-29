@@ -1,9 +1,10 @@
 import React from 'react'
 import './Card.css';
 
-const Card = ({emoji,task, description,  progress, done}) => {
+const Card = ({emoji,task, description,  progress, done, onClick}) => {
   return (
-    <div className='Card'>
+    <div className='Card'
+    onClick={onClick}>
         <div className='card_header'>
             <h4 className='card_emoji'>{emoji}</h4>
             <h4 className='card_title'>{task}</h4>
@@ -12,7 +13,7 @@ const Card = ({emoji,task, description,  progress, done}) => {
         <div className='current'>
             <div className='progress'>
                 <h4 className='comment'>Progress</h4>
-                <h4 className='check'>{progress? 'ⵔ' : '☓' }</h4>
+                <h4 className='check'>{progress? 'ⵔ' : '☓'}</h4>
             </div>
 
             <div className='done'>

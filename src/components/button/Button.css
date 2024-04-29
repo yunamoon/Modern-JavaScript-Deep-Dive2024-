@@ -1,0 +1,24 @@
+.btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    position: relative; /* 추가 */
+    display: inline-block;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom:-5px;
+    left: 0;
+    background-color: #007bff; /* 원하는 언더라인 색상으로 변경 가능 */
+    transition: width 0.3s ease; /* 수정된 부분: width에 단위 추가 */
+}
+
+.btn:hover::after {
+    width:180px;
+}

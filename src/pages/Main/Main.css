@@ -30,6 +30,10 @@
 .card_section {
     margin-top: 10px;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; 
+}
+
+.card_section > * {
+    flex: 0 0 calc(43% - 10px);
 }
