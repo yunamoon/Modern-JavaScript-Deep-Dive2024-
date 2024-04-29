@@ -3,6 +3,7 @@ import './Main.css';
 import Header from '../../components/header/Header';
 import Button from '../../components/button/Button';
 import Card from '../../components/card/Card';
+import { cardContetns } from '../../util/cardContents';
 
 const Main = ()=> {
   return (
@@ -18,8 +19,15 @@ const Main = ()=> {
       </div>
     </section>
 
-    <section>
-      <Card/>
+    <section className='card_section'>
+      {cardContetns.map((item)=> (
+             <Card key={item.id}
+             emoji={item.emoji} 
+             task={item.task} 
+             description={item.description}
+             progress={item.progress} 
+             done={item.done}/>
+      ))};
     </section>
 
     </div>

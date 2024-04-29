@@ -3,10 +3,10 @@
 }
 
 .Main .total_goal {
+    box-shadow: rgba(100, 100, 100, 0.2) 0px 0px 10px 0px;
     background-color: #89ccc5;
     padding: 30px 20px;
     border-radius: 15px;
-
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -25,4 +25,11 @@
 .total_goal .check p{
     margin-bottom: 5px;
     font-weight: 600;
+}
+
+.card_section {
+    margin-top: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }
