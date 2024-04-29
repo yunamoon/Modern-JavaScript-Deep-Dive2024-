@@ -18,7 +18,7 @@ const Widget = () => {
 
   return (
     <div>
-      <Header title={'To Do list'} right={<Button text={'< Back'} onClick={()=>nav(-1)}/>}/>
+      <Header title={currentWidget.task} right={<Button text={'< Back'} onClick={()=>nav(-1)}/>}/>
       <Card {...currentWidget}/>
     </div>
   )
