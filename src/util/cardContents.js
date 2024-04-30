@@ -3,7 +3,7 @@ export const cardContetns = [
    id : 1,
    emoji : '📆', 
    task : 'To Do List', 
-   description : 'Drag&Drop을 추가한 To Do LIst',
+   description : '간단한 To Do LIst',
    progress : false, 
    done : true },
    
