@@ -20,7 +20,7 @@
 React 기반으로 가벼운 기능 단위 위젯을 개발하는 프로젝트로, 현재 To Do List Widget과 Weather widget이 포함되어 있습니다.
 
 What did I do:
-* To Do List (간단한 task를 등록하고 해다 task를 수정, 삭제, 완료처리 할 수 있습니다.)
+* To Do List (간단한 task를 등록하고 해다 task를 완료 처리, 삭제 할 수 있습니다.)
 * Weather Widget (현재 위치 기반의 날씨 정보를 제공하고, 원하는 도시의 날씨 정보를 검색할 수 있습니다.)
 
 Tech Stack:
