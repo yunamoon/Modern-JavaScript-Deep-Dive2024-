@@ -1,0 +1,12 @@
+.Editor {
+    display: flex;
+    gap:10px;
+    margin-top: 30px;
+}
+
+.Editor input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid rgb(220,220,220);
+    border-radius: 5px;
+}

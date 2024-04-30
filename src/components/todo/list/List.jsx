@@ -1,10 +1,10 @@
 import { useMemo, useState, useContext } from 'react';
 import './List.css';
 import Item from './item/Item';
-import { ItemsStateContext } from '../../App';
+import { ToDoStateContext } from '../ToDoList';
 
 const List = () => {
-  const items = useContext( ItemsStateContext);
+  const items = useContext( ToDoStateContext);
   const [search , setSearch] = useState("");
 
   const onChangeSearch = (e) => {
@@ -36,11 +36,11 @@ const List = () => {
   return (
     <div className='List'>
       <h4>To do List ✅</h4>
-      <div>
+      {/* <div>
         <div>total : {total}</div>
         <div>done : {done}</div>
         <div>notDone : {notDone}</div>
-      </div>
+      </div> */}
       <input 
       value={search}
       onChange={onChangeSearch}

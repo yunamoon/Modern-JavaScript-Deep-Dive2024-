@@ -1,9 +1,10 @@
 import { useRef, useState, useContext } from 'react';
 import './Editor.css';
-import { ItemsDispatchContext } from '../../App';
+import { ToDoDispatchContext } from '../ToDoList';
+import Button from '../../button/Button';
 
 const Editor = () => {
-  const {onCreate} = useContext(ItemsDispatchContext );
+  const {onCreate} = useContext(ToDoDispatchContext );
   const [content, setContent] = useState("");
   const contentRef = useRef();
 
@@ -34,9 +35,7 @@ const Editor = () => {
       value={content}  
       onChange={onChangeContent} 
       placeholder='새로운 to do를 작성해주세요!'/>
-      <button 
-      onClick={onSubmit}>
-        추가</button>
+      <Button onClick={onSubmit} text={'추가'} id={2} />
     </div>
   )
 }

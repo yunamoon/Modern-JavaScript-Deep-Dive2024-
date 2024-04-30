@@ -5,11 +5,11 @@ import Header from '../../components/header/Header';
 import Button from '../../components/button/Button';
 import Card from '../../components/card/Card';
 import useCurrentWidget from '../../hooks/useCurrentWidget';
+import ToDoList from '../../components/todo/ToDoList';
 
 const Widget = () => {
   const params = useParams();
   const nav = useNavigate();
-  console.log(params.id)
   const currentWidget = useCurrentWidget(params.id);
   
   if(!currentWidget) {
@@ -18,8 +18,10 @@ const Widget = () => {
 
   return (
     <div>
-      <Header title={currentWidget.task} right={<Button text={'< Back'} onClick={()=>nav(-1)}/>}/>
+      <Header title={currentWidget.task} 
+      right={<Button text={'< Back'} id={1} onClick={()=>nav(-1)} />}/>
       <Card {...currentWidget}/>
+      {currentWidget.task === 'To Do List' && <ToDoList/> }
     </div>
   )
 }

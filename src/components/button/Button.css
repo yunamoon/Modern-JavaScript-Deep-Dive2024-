@@ -1,4 +1,4 @@
-.btn {
+.btn_type_1 {
     background-color: transparent;
     border: none;
     outline: none;
@@ -8,7 +8,7 @@
     display: inline-block;
 }
 
-.btn::after {
+.btn_type_1::after {
     content: '';
     position: absolute;
     width: 0;
@@ -19,6 +19,14 @@
     transition: width 0.3s ease; /* 수정된 부분: width에 단위 추가 */
 }
 
-.btn:hover::after {
+.btn_type_1:hover::after {
     width:180px;
+}
+
+.btn_type_2 {
+    width: 80px;
+    border: none;
+    background-color: #89ccc5;
+    color: white;
+    border-radius: 5px;
 }

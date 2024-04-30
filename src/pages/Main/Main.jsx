@@ -20,7 +20,7 @@ const Main = ()=> {
   return (
     <div className='Main'>
     <Header 
-    right={<Button text={'React Widget'}/>}
+    right={<Button text={'React Widget'} id={1}/>}
     title={'Main'}/>
 
     <section className='total_goal'>
