@@ -1,11 +1,11 @@
+
 .btn_type_1 {
     background-color: transparent;
     border: none;
     outline: none;
-    cursor: pointer;
-
     position: relative; /* 추가 */
     display: inline-block;
+    cursor: pointer;
 }
 
 .btn_type_1::after {
@@ -24,9 +24,19 @@
 }
 
 .btn_type_2 {
+    cursor: pointer;
     width: 80px;
     border: none;
     background-color: #89ccc5;
     color: white;
+    border-radius: 5px;
+}
+
+.btn_type_3 {
+    cursor: pointer;
+    width: 80px;
+    border: none;
+    background-color:#D7EBE9;
+    color:  #89ccc5;
     border-radius: 5px;
 }

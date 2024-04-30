@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import './Weather.css'
-// icon
+import Button from '../button/Button';
+
 import { WiHumidity, WiStrongWind } from 'react-icons/wi'
 
 const Weather = () => {
@@ -40,7 +41,7 @@ const Weather = () => {
                 wind : data.wind.speed,
             });
         } catch (error) {
-            console.log('에러 발생' , error)
+            console.log('에러 발생' , error);
         }
     };
 
@@ -72,22 +73,25 @@ const Weather = () => {
             let lon = position.coords.longitude;
            getWeather(lat, lon);
         })
-    }, []);
+    }, [location]);
 
+    if(!weatherData.temp) {
+        return   <div className='Weather'> 로딩 중입니다...!</div>
+    }
 
     return (
-    <div className='container'>
-
+    <div className='Weather'>
         <div className='search-bar'>
             <input className='search-input' 
             placeholder='원하는 도시를 검색하세요. 🥰' 
             ref={contentRef}
             onChange={handleInput}
             onKeyUp={onKeydown} />
-            <button className='search-icon' 
-            onClick={handleSearch}>
-                search
-            </button>
+            <Button  
+            onClick={handleSearch} 
+            text={'검색'}
+            id={3}
+            />
         </div>
 
         <img className='weather-logo' src={weatherData.icon} alt='logo'/>

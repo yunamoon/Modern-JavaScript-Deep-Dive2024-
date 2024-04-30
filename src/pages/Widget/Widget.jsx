@@ -6,6 +6,8 @@ import Button from '../../components/button/Button';
 import Card from '../../components/card/Card';
 import useCurrentWidget from '../../hooks/useCurrentWidget';
 import ToDoList from '../../components/todo/ToDoList';
+import Weather from '../../components/weather/Weather';
+
 
 const Widget = () => {
   const params = useParams();
@@ -19,9 +21,10 @@ const Widget = () => {
   return (
     <div>
       <Header title={currentWidget.task} 
-      right={<Button text={'< Back'} id={1} onClick={()=>nav(-1)} />}/>
+      right={<Button text={'< Back'} id={1} onClick={()=>nav(-1,{replace:true})} />}/>
       <Card {...currentWidget}/>
       {currentWidget.task === 'To Do List' && <ToDoList/> }
+      {currentWidget.task === 'Weather' && <Weather/> }
     </div>
   )
 }
