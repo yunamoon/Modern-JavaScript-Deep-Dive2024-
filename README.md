@@ -7,7 +7,7 @@
     React 기반으로 가벼운 기능 단위 위젯을 개발하는 프로젝트입니다.
     <br />
     <br />
-    <a href="[https://hh99-ac7ee.web.app](https://react-widget-lemon.vercel.app/)">View Demo</a>
+    <a href="https://react-widget-lemon.vercel.app">View Demo</a>
     ·
     <a href="/">Blog</a>
   </p>
